@@ -1,6 +1,7 @@
 import { config } from "../config.ts";
+import { resolvePath } from "./path.ts";
 
-const LOG_FILE = Bun.file(config.logFile);
+const LOG_FILE = Bun.file(resolvePath(config.logFile));
 
 export const log = async (
 	level: "info" | "warn" | "error",

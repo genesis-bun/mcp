@@ -1,8 +1,9 @@
 import yaml from "js-yaml";
 import { config } from "../config.ts";
 import { type State, StateSchema } from "../schema.ts";
+import { resolvePath } from "./path.ts";
 
-const STATE_FILE = Bun.file(config.stateFile);
+const STATE_FILE = Bun.file(resolvePath(config.stateFile));
 
 function deepMerge<T extends Record<string, unknown>>(
 	target: T,
