@@ -1,0 +1,17 @@
+---
+description: Example MCP server rules (optional - customize or remove)
+globs: state.yaml, hono.ts, tools/**/*.ts
+---
+
+# Example MCP Server Rules
+
+This is an optional rules file. Customize it for your MCP server or remove it if not needed.
+
+## Tool Usage Guidelines
+- Document when to use specific tools
+- Add automatic tool usage patterns
+- Example: "When user asks about status, use `get_status` tool"
+
+## Response Style
+- Define your preferred tone and style
+- Example: "Keep responses concise and friendly"
