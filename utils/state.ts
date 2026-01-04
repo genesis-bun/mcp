@@ -4,7 +4,6 @@ import { type State, StateSchema } from "../schema.ts";
 
 const STATE_FILE = Bun.file(config.stateFile);
 
-// Deep merge utility function
 function deepMerge<T extends Record<string, unknown>>(
 	target: T,
 	source: Partial<T>,
@@ -37,7 +36,6 @@ export const getState = async (): Promise<State> => {
 };
 
 export const saveState = async (state: State): Promise<void> => {
-	// Validate before writing
 	StateSchema.parse(state);
 	await Bun.write(STATE_FILE, yaml.dump(state, { indent: 2 }));
 };

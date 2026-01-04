@@ -1,8 +1,5 @@
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
-
-// Import your tool registration functions here
-// Example: import { registerExampleTool } from "./tools/example-tool.ts";
 import { registerHealthCheck } from "./tools/health-check.ts";
 
 const server = new McpServer({
@@ -10,8 +7,6 @@ const server = new McpServer({
 	version: "1.0.0",
 });
 
-// Register your MCP tools here
-// Example: registerExampleTool(server);
 registerHealthCheck(server);
 
 const transport = new StdioServerTransport();

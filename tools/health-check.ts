@@ -11,7 +11,7 @@ export const registerHealthCheck = (server: McpServer) => {
 		async () => {
 			try {
 				const state = await getState();
-				StateSchema.parse(state); // Validate
+				StateSchema.parse(state);
 				return {
 					content: [
 						{
