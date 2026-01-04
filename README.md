@@ -26,7 +26,7 @@ Add to Cursor's MCP settings:
   "mcpServers": {
     "my-mcp-server": {
       "command": "bun",
-      "args": ["/path/to/your/project/hono.ts"],
+      "args": ["/path/to/your/project/index.ts"],
       "cwd": "/path/to/your/project"
     }
   }
@@ -38,7 +38,7 @@ Restart Cursor. Your tools are now available.
 ## Project Structure
 
 ```
-├── hono.ts              # MCP server entry point
+├── index.ts              # MCP server entry point
 ├── state.yaml           # State file (customize for your needs)
 ├── types.ts             # Auto-generated types (do not edit manually)
 ├── tools/               # MCP tool handlers
@@ -64,7 +64,7 @@ Restart Cursor. Your tools are now available.
 
 **Rename the project:**
 - Update `name` in `package.json`
-- Update server `name` in `hono.ts`
+- Update server `name` in `index.ts`
 - Update MCP server configuration in Cursor
 
 **Customize state structure:**
@@ -76,7 +76,7 @@ Restart Cursor. Your tools are now available.
 
 1. Copy `tools/example-tool.ts` to create your new tool
 2. Customize the tool name, description, and logic
-3. Register it in `hono.ts`:
+3. Register it in `index.ts`:
    ```typescript
    import { registerYourTool } from "./tools/your-tool.ts";
    // ...
@@ -124,7 +124,7 @@ await saveState({ ...state, data: { ...state.data, newField: "value" } });
 ```
 Cursor IDE
     ↓ (stdio transport)
-hono.ts (MCP server)
+index.ts (MCP server)
     ↓ (tool registration)
 tools/*.ts (tool handlers)
     ↓ (state access)
@@ -162,7 +162,7 @@ Types auto-generate before `start`/`dev` via pre-build hooks.
 
 1. Create a new file in `tools/` directory
 2. Follow the pattern in `tools/example-tool.ts`
-3. Register the tool in `hono.ts`
+3. Register the tool in `index.ts`
 4. Test with `bun run dev`
 
 ### State Management

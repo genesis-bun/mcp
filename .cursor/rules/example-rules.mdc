@@ -1,6 +1,6 @@
 ---
 description: Example MCP server rules (optional - customize or remove)
-globs: state.yaml, hono.ts, tools/**/*.ts
+globs: state.yaml, index.ts, tools/**/*.ts
 ---
 
 # Example MCP Server Rules

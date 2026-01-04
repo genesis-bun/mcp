@@ -16,7 +16,7 @@ Change the `name` field in `package.json`:
 
 ### Update Server Name
 
-Edit `hono.ts` and change the server name:
+Edit `index.ts` and change the server name:
 
 ```typescript
 const server = new McpServer({
@@ -34,7 +34,7 @@ Update your Cursor MCP settings with the correct paths:
   "mcpServers": {
     "your-mcp-server-name": {
       "command": "bun",
-      "args": ["/absolute/path/to/your/project/hono.ts"],
+      "args": ["/absolute/path/to/your/project/index.ts"],
       "cwd": "/absolute/path/to/your/project"
     }
   }
@@ -152,7 +152,7 @@ export const registerMyTool = (server: McpServer) => {
 
 ### Register the Tool
 
-Add your tool registration to `hono.ts`:
+Add your tool registration to `index.ts`:
 
 ```typescript
 import { registerMyTool } from "./tools/my-tool.ts";
@@ -266,7 +266,7 @@ Create `.cursor/rules/your-rules.mdc`:
 ```markdown
 ---
 description: Your custom MCP server rules
-globs: state.yaml, hono.ts, tools/**/*.ts
+globs: state.yaml, index.ts, tools/**/*.ts
 ---
 
 # Your MCP Server Rules
@@ -363,7 +363,7 @@ If types don't match your `state.yaml`:
 1. Verify MCP configuration in Cursor settings
 2. Restart Cursor completely
 3. Check server logs for errors
-4. Verify tool is registered in `hono.ts`
+4. Verify tool is registered in `index.ts`
 
 ### State Not Persisting
 
